@@ -1,8 +1,9 @@
-package org.example.LinkedList;
+package org.example.doublyLinkedList;
 
 public class Node {
     private Integer value;
-    private org.example.LinkedList.Node next;
+    private Node next;
+    private Node prev;
     public Node(Integer value) {
         this.value = value;
     }
@@ -12,11 +13,17 @@ public class Node {
     public void setValue(Integer value) {
         this.value = value;
     }
-    public org.example.LinkedList.Node getNext() {
+    public Node getNext() {
         return next;
     }
-    public void setNext(org.example.LinkedList.Node next) {
+    public void setNext(Node next) {
         this.next = next;
+    }
+    public Node getPrev() {
+        return prev;
+    }
+    public void setPrev(Node prev) {
+        this.prev = prev;
     }
     @Override
     public String toString() {

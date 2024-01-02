@@ -1,4 +1,4 @@
-package org.example.LinkedList;
+package org.example.linkedList;
 
 public class LinkedList {
     private Node head;
