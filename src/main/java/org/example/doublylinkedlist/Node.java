@@ -1,4 +1,4 @@
-package org.example.doublyLinkedList;
+package org.example.doublylinkedlist;
 
 public class Node {
     private Integer value;

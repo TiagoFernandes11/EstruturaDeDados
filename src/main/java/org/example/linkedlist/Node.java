@@ -1,8 +1,8 @@
-package org.example.linkedList;
+package org.example.linkedlist;
 
 public class Node {
     private Integer value;
-    private org.example.linkedList.Node next;
+    private org.example.linkedlist.Node next;
     public Node(Integer value) {
         this.value = value;
     }
@@ -12,10 +12,10 @@ public class Node {
     public void setValue(Integer value) {
         this.value = value;
     }
-    public org.example.linkedList.Node getNext() {
+    public org.example.linkedlist.Node getNext() {
         return next;
     }
-    public void setNext(org.example.linkedList.Node next) {
+    public void setNext(org.example.linkedlist.Node next) {
         this.next = next;
     }
     @Override
