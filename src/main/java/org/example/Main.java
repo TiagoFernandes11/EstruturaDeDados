@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.binarysearchtree.BinarySearchTree;
+import org.example.graph.Graph;
 import org.example.hashtable.HashTable;
 import org.example.queue.Queue;
 import org.example.stack.Stack;
@@ -8,22 +9,39 @@ import org.example.stack.Stack;
 public class Main {
     public static void main(String[] args) {
 
-        HashTable myHashTable = new HashTable();
+        Graph myGraph = new Graph();
 
-        myHashTable.set("paint", 20);
-        myHashTable.set("bolts", 40);
-        myHashTable.set("nails", 100);
-        myHashTable.set("tile", 50);
-        myHashTable.set("lumber", 80);
+        myGraph.addVertex("A");
+        myGraph.addVertex("B");
+        myGraph.addVertex("C");
+        myGraph.addVertex("D");
 
-        System.out.println( myHashTable.keys() );
+        myGraph.addEdge("A", "B");
+        myGraph.addEdge("A", "C");
+        myGraph.addEdge("A", "D");
+        myGraph.addEdge("B", "D");
+        myGraph.addEdge("C", "D");
 
-    	/*
-        	EXPECTED OUTPUT:
-        	----------------
-        	[paint, bolts, nails, tile, lumber]
 
-    	*/
+        System.out.println("Graph before removeVertex():");
+        myGraph.printGraph();
+
+        myGraph.removeVertex("D");
+
+        System.out.println("\nGraph after removeVertex():");
+        myGraph.printGraph();
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            Graph before removeVertex():
+            {A=[B, C, D], B=[A, D], C=[A, D], D=[A, B, C]}
+
+            Graph after removeVertex():
+            {A=[B, C], B=[A], C=[A]}
+
+        */
 
     }
+
 }
