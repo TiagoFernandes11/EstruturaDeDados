@@ -58,8 +58,7 @@ public class BinarySearchTree {
         Queue<Node> queue = new LinkedList<>();
         ArrayList<Integer> results = new ArrayList<>();
         queue.add(currentNode);
-
-        while (queue.size() > 0) {
+        while (!queue.isEmpty()) {
             currentNode = queue.remove();
             results.add(currentNode.getValue());
             if (currentNode.getLeft() != null) {
@@ -69,6 +68,23 @@ public class BinarySearchTree {
                 queue.add(currentNode.getRight());
             }
         }
+        return results;
+    }
+
+    public ArrayList<Integer> DFSPreOrder() {
+        ArrayList<Integer> results = new ArrayList<>();
+        class Traverse {
+            Traverse(Node currentNode) {
+                results.add(currentNode.getValue());
+                if (currentNode.getLeft() != null) {
+                    new Traverse(currentNode.getLeft());
+                }
+                if (currentNode.getRight() != null) {
+                    new Traverse(currentNode.getRight());
+                }
+            }
+        }
+        new Traverse(root);
         return results;
     }
 }
