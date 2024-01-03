@@ -9,36 +9,24 @@ import org.example.stack.Stack;
 public class Main {
     public static void main(String[] args) {
 
-        Graph myGraph = new Graph();
+        BinarySearchTree myBST = new BinarySearchTree();
 
-        myGraph.addVertex("A");
-        myGraph.addVertex("B");
-        myGraph.addVertex("C");
-        myGraph.addVertex("D");
+        myBST.insert(47);
+        myBST.insert(21);
+        myBST.insert(76);
+        myBST.insert(18);
+        myBST.insert(27);
+        myBST.insert(52);
+        myBST.insert(82);
 
-        myGraph.addEdge("A", "B");
-        myGraph.addEdge("A", "C");
-        myGraph.addEdge("A", "D");
-        myGraph.addEdge("B", "D");
-        myGraph.addEdge("C", "D");
-
-
-        System.out.println("Graph before removeVertex():");
-        myGraph.printGraph();
-
-        myGraph.removeVertex("D");
-
-        System.out.println("\nGraph after removeVertex():");
-        myGraph.printGraph();
+        System.out.println("DFS InOrder:");
+        System.out.println( myBST.DFSInOrder() );
 
         /*
             EXPECTED OUTPUT:
             ----------------
-            Graph before removeVertex():
-            {A=[B, C, D], B=[A, D], C=[A, D], D=[A, B, C]}
-
-            Graph after removeVertex():
-            {A=[B, C], B=[A], C=[A]}
+            DFS InOrder:
+            [18, 21, 27, 47, 52, 76, 82]
 
         */
 
