@@ -87,4 +87,38 @@ public class BinarySearchTree {
         new Traverse(root);
         return results;
     }
+
+    public ArrayList<Integer> DFSPostOrder() {
+        ArrayList<Integer> results = new ArrayList<>();
+        class Traverse {
+            Traverse(Node currentNode) {
+                if (currentNode.getLeft() != null) {
+                    new Traverse(currentNode.getLeft());
+                }
+                if (currentNode.getRight() != null) {
+                    new Traverse(currentNode.getRight());
+                }
+                results.add(currentNode.getValue());
+            }
+        }
+        new Traverse(root);
+        return results;
+    }
+
+    public ArrayList<Integer> DFSInOrder() {
+        ArrayList<Integer> results = new ArrayList<>();
+        class Traverse {
+            Traverse(Node currentNode) {
+                if (currentNode.getLeft() != null) {
+                    new Traverse(currentNode.getLeft());
+                }
+                results.add(currentNode.getValue());
+                if (currentNode.getRight() != null) {
+                    new Traverse(currentNode.getRight());
+                }
+            }
+        }
+        new Traverse(root);
+        return results;
+    }
 }
