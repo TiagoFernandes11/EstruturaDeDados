@@ -1,43 +1,29 @@
 package org.example;
 
 import org.example.binarysearchtree.BinarySearchTree;
+import org.example.hashtable.HashTable;
 import org.example.queue.Queue;
 import org.example.stack.Stack;
 
 public class Main {
     public static void main(String[] args) {
 
-        BinarySearchTree myBST = new BinarySearchTree();
+        HashTable myHashTable = new HashTable();
 
-        myBST.insert(2);
-        myBST.insert(1);
-        myBST.insert(3);
-        myBST.insert(47);
-        myBST.insert(21);
-        myBST.insert(76);
-        myBST.insert(18);
-        myBST.insert(27);
-        myBST.insert(52);
-        myBST.insert(82);
+        myHashTable.set("paint", 20);
+        myHashTable.set("bolts", 40);
+        myHashTable.set("nails", 100);
+        myHashTable.set("tile", 50);
+        myHashTable.set("lumber", 80);
 
+        System.out.println( myHashTable.keys() );
 
-        System.out.println("BST Contains 27:");
-        System.out.println(myBST.contains(27));
+    	/*
+        	EXPECTED OUTPUT:
+        	----------------
+        	[paint, bolts, nails, tile, lumber]
 
-        System.out.println("\nBST Contains 17:");
-        System.out.println(myBST.contains(17));
-
-
-        /*
-            EXPECTED OUTPUT:
-            ----------------
-            BST Contains 27:
-            true
-
-            BST Contains 17:
-            false
-
-        */
+    	*/
 
     }
 }
