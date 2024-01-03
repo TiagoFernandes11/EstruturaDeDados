@@ -1,5 +1,9 @@
 package org.example.binarysearchtree;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
     private Node root;
 
@@ -47,5 +51,24 @@ public class BinarySearchTree {
                 temp = temp.getRight();
             }
         }
+    }
+
+    public ArrayList<Integer> BFS() {
+        Node currentNode = root;
+        Queue<Node> queue = new LinkedList<>();
+        ArrayList<Integer> results = new ArrayList<>();
+        queue.add(currentNode);
+
+        while (queue.size() > 0) {
+            currentNode = queue.remove();
+            results.add(currentNode.getValue());
+            if (currentNode.getLeft() != null) {
+                queue.add(currentNode.getLeft());
+            }
+            if (currentNode.getRight() != null) {
+                queue.add(currentNode.getRight());
+            }
+        }
+        return results;
     }
 }
